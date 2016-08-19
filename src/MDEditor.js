@@ -46,7 +46,7 @@ class MDEditor extends React.Component {
   render() {
     const { tab, onTabChange, value, onValueChange, markFn, imageUpload, minHeight } = this.props
     const { focus, selectedPosition, scale } = this.state
-    let editBoxStyle = { minHeight: `${minHeight}px` }
+    let editBoxStyle = minHeight ? { minHeight: `${minHeight}px` } : {}
     let previewBoxStyle = {}
     if (tab === 'edit' && scale === 'normal') {
       previewBoxStyle = { display: 'none' }

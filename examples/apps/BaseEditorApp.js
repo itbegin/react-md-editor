@@ -17,6 +17,7 @@ class BaseEditorApp extends Component {
           tab={mdTab}
           onValueChange={this.onMDValueChange}
           onTabChange={this.onMDTabChange}
+          minHeight={200}
         />
       </div>
     )

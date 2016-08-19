@@ -82,21 +82,23 @@ class EditBox extends Component {
     const { styles, value, focus, onChange, onFocus, imageUpload, style } = this.props
     return (
       <div style={_.merge({}, styles.editBox, style)}>
-        <textarea
-          ref={(t) => (this.editarea = t)}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          onFocus={onFocus}
-          onSelect={this.onSelect}
-          style={_.merge({}, styles.editarea, focus && styles.editareaFocus)}
-          onDrop={(e) => {
-            e.preventDefault()
-            e.stopPropagation()
-            if (imageUpload) {
-              imageUpload(e.dataTransfer.files[0], this.image)
-            }
-          }}
-        />
+        <div style={{ display: 'flex', flex: 1 }}>
+          <textarea
+            ref={(t) => (this.editarea = t)}
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            onFocus={onFocus}
+            onSelect={this.onSelect}
+            style={_.merge({}, styles.editarea, focus && styles.editareaFocus)}
+            onDrop={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              if (imageUpload) {
+                imageUpload(e.dataTransfer.files[0], this.image)
+              }
+            }}
+          />
+        </div>
         <div style={_.merge({}, styles.editFooter, focus && styles.editFooterFocus)}>
           <span style={_.merge({}, !imageUpload && { visibility: 'hidden' })}>
             {'Attach files by dragging & dropping, or  '}
