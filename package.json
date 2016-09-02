@@ -1,6 +1,6 @@
 {
   "name": "react-md-editor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a React Markdown Editor, based on textarea.",
   "main": "index.js",
   "directories": {
@@ -54,9 +54,11 @@
   },
   "dependencies": {
     "github-markdown-css": "^2.4.0",
-    "lodash": "^4.15.0",
-    "marked": "^0.3.6",
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0"
+    "marked": "^0.3.6"
+  },
+  "peerDependencies": {
+      "lodash": "^4.15.0",
+      "react": "^15.3.0",
+      "react-dom": "^15.3.0"
   }
 }
